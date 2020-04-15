@@ -139,7 +139,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.1k 字
+                    1.8k 字
                   </span>
                 
 
@@ -149,7 +149,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    11
+                    18
                      分钟
                   </span>
                 
@@ -188,8 +188,20 @@
 <p>振动最简单的形式是简谐振动，因此当简谐振动的频率达到20Hz~20000Hz之间时也可以使人听到声音，我们把简谐振动发出的声音称为<strong>纯音</strong>。如同简谐振动在现实情况下不存在一样，纯音实际上也不存在，但是我们可以利用纯音作为抽象的物理模型去研究音的特征。</p>
 <p>音在物理层面上具有四个基本特征：<strong>音高</strong>、<strong>音强</strong>、<strong>音长</strong>和<strong>音色</strong>，对于纯音（简谐振动）而言，音高对应着振动频率，音强对应振幅，音长对应着持续的振动时间。以下图为例，红色音频有着更高的音高，更高的音强以及更短的音长。</p>
 <p><img src="https://raw.githubusercontent.com/FulguRat/Image-Hosting/master/image-20200415003800808.png" srcset="/img/loading.gif" alt="image-20200415003800808"></p>
+<p>我们对于旋律与和声的研究，都是基于音高这个特征来表述的：旋律基于音高的时域特征，和声基于音高的频域特征。因此，在旋律与和声部分，声音的振动频率将是我们关注的重点。</p>
 <p>而对于音色而言，单纯的简谐振动是不能进行音色区分的，所以这里引入复合音的概念。</p>
-<h3 id="复合音"><a href="#复合音" class="headerlink" title="复合音"></a>复合音</h3>
+<h3 id="复合音"><a href="#复合音" class="headerlink" title="复合音"></a>复合音</h3><p>在音乐学科中，复合音通常被定义为由纯音组成的音。但如果从物理意义上进一步追究，复合音实际上是不同特征简谐波的叠加，描述这个叠加的过程需要一个从<strong>时域</strong>到<strong>频域</strong>的变换关系，这就是数字信号处理中大名鼎鼎的<strong>傅里叶变换</strong>（如果没有接触过这几个概念没关系，下面我会尽可能通俗地解释）。而在音乐中，我们需要的复合音只有听起来和谐的纯音叠加：一种的特点是纯音之间的频率成整数倍关系，这种复合音被称为<strong>泛音</strong>，主要关系到不同乐器的音色；另一种的特点是纯音的振幅大致相似，这种复合音叫做<strong>拍频（Beat）</strong>，是<strong>和声学</strong>的重要理论基础。</p>
+<h4 id="复合音的形成与傅里叶变换"><a href="#复合音的形成与傅里叶变换" class="headerlink" title="复合音的形成与傅里叶变换"></a>复合音的形成与傅里叶变换</h4><p>复合音的形成是源于简谐波的叠加，如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/FulguRat/Image-Hosting/master/image-20200415143418143.png" srcset="/img/loading.gif" alt="image-20200415143418143"></p>
+<p>红色和蓝色两段简谐波在时间尺度上进行叠加，可以最终得到下方的振动波形。但是为了描述这个叠加波形，我们必须描述复合波的所有简谐分量，再进一步描述这个叠加过程，这种描述方式十分不直观。</p>
+<p>为了描述纯音的叠加，我们这里引入时域和频域的概念。由于描述纯音的简谐振动具有周期性，所以一定具有频率和振幅两个特征，我们以频率作为横坐标，纵坐标指明该频率分量在符合波中所占的比重（振幅），就可以画出这样的图像：</p>
+<p><img src="https://raw.githubusercontent.com/FulguRat/Image-Hosting/master/image-20200415144724590.png" srcset="/img/loading.gif" alt="image-20200415144724590"></p>
+<p>这张图像就是这段复合波的<strong>频域表述</strong>，显而易见在频域上表述波的叠加非常直观；而上面的波形图仍然是在时间尺度内表达复合波的振动，是这段复合波的<strong>时域表述</strong>。而将一段时域上的复合波，映射到频域上，进而直观地分解为简谐分量的叠加，这就是<strong>傅里叶变换</strong>的思路。</p>
+<p>其实时域与频域的思想在音乐上早已广有应用，例如在Au中的一段音频信号显而易见是一张时域图：</p>
+<p><img src="https://raw.githubusercontent.com/FulguRat/Image-Hosting/master/Au%E6%B3%A2%E5%BD%A2%E5%9B%BE.png" srcset="/img/loading.gif" alt=""></p>
+<p>而五线谱就是一段音乐的频域表达了：</p>
+<p><img src="https://raw.githubusercontent.com/FulguRat/Image-Hosting/master/%E4%BA%94%E7%BA%BF%E8%B0%B1.png" srcset="/img/loading.gif" alt=""></p>
+<h4 id="泛音"><a href="#泛音" class="headerlink" title="泛音"></a>泛音</h4><h4 id="拍频（Beat）"><a href="#拍频（Beat）" class="headerlink" title="拍频（Beat）"></a>拍频（Beat）</h4>
             </article>
             <hr>
             <div>
